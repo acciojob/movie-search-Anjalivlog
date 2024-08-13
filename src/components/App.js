@@ -36,14 +36,16 @@ const App = () => {
   return (
     <div>
     <h1>Movie Search</h1>
-    <input
-      type="text"
-      value={query}
-      onChange={(e) => setQuery(e.target.value)}
-      placeholder="Enter movie title"
-    />
-    <button onClick={handleSearch}>Search</button>
-
+    <form onSubmit={handleSearch} className="search-form">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search movies..."
+        className="search-input"
+      />
+      <button type="submit" className="search-button">Search</button>
+    </form>
     {error && <p className="error">{error}</p>}
 
     <ul className="movie-list">
