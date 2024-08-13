@@ -34,30 +34,31 @@ const App = () => {
   };
 
   return (
-    <div>
-    <h1>Movie Search</h1>
-    <form onSubmit={handleSearch} className="search-form">
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search movies..."
-        className="search-input"
-      />
-      <button type="submit" className="search-button">Search</button>
-    </form>
-    {error && <p className="error">{error}</p>}
+    <div className="app">
+      <h1>Movie Search</h1>
+      <form onSubmit={handleSubmit} className="search-form">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search movies..."
+          className="search-input"
+        />
+        <button type="submit" className="search-button">Search</button>
+      </form>
 
-    <ul className="movie-list">
-      {movies.map((movie) => (
-        <li key={movie.imdbID} className="movie-item">
-          <h2>{movie.Title}</h2>
-          <p>{movie.Year}</p>
-          <img src={movie.Poster} alt={movie.Title} />
-        </li>
-      ))}
-    </ul>
-  </div>
+      {error && <p className="error">{error}</p>}
+
+      <ul className="movie-list">
+        {movies.map((movie) => (
+          <li key={movie.imdbID} className="movie-item">
+            <h2>{movie.Title}</h2>
+            <p>{movie.Year}</p>
+            <img src={movie.Poster} alt={movie.Title} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
