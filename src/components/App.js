@@ -36,7 +36,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>Movie Search</h1>
-      <form onSubmit={handleSubmit} className="search-form">
+      <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
           value={query}
